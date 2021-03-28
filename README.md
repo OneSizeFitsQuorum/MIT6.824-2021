@@ -1,2 +1,2 @@
-## Reminding
-Please try your best to finish this lab by yourself~
+## 文档
+- [x] [lab1](docs/lab1.md) 
