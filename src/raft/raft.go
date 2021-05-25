@@ -639,6 +639,7 @@ func (rf *Raft) applier() {
 			rf.applyCh <- ApplyMsg{
 				CommandValid: true,
 				Command:      entry.Command,
+				CommandTerm:  entry.Term,
 				CommandIndex: entry.Index,
 			}
 		}

@@ -31,6 +31,7 @@ func DPrintf(format string, a ...interface{}) {
 type ApplyMsg struct {
 	CommandValid bool
 	Command      interface{}
+	CommandTerm  int
 	CommandIndex int
 
 	SnapshotValid bool
@@ -41,11 +42,11 @@ type ApplyMsg struct {
 
 func (msg ApplyMsg) String() string {
 	if msg.CommandValid {
-		return fmt.Sprintf("{Command:%v,CommandIndex:%v}", msg.Command, msg.CommandIndex)
+		return fmt.Sprintf("{Command:%v,CommandTerm:%v,CommandIndex:%v}", msg.Command, msg.CommandTerm, msg.CommandIndex)
 	} else if msg.SnapshotValid {
 		return fmt.Sprintf("{Snapshot:%v,SnapshotTerm:%v,SnapshotIndex:%v}", msg.Snapshot, msg.SnapshotTerm, msg.SnapshotIndex)
 	} else {
-		panic(fmt.Sprintf("unexpected ApplyMsg{CommandValid:%v,CommandIndex:%v,SnapshotValid:%v,SnapshotTerm:%v,SnapshotIndex:%v}", msg.CommandValid, msg.CommandIndex, msg.SnapshotValid, msg.SnapshotTerm, msg.SnapshotIndex))
+		panic(fmt.Sprintf("unexpected ApplyMsg{CommandValid:%v,CommandTerm:%v,CommandIndex:%v,SnapshotValid:%v,SnapshotTerm:%v,SnapshotIndex:%v}", msg.CommandValid, msg.CommandTerm, msg.CommandIndex, msg.SnapshotValid, msg.SnapshotTerm, msg.SnapshotIndex))
 	}
 }
 
