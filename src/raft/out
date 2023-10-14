@@ -1,0 +1,145 @@
+2022/07/31 23:21:32 start test
+2022/07/31 23:21:32 start election
+2022/07/31 23:21:32 {Node 0} starts election with RequestVoteRequest &{1 0 0 0}
+2022/07/31 23:21:32 start test
+2022/07/31 23:21:32 start election
+2022/07/31 23:21:32 {Node 1} starts election with RequestVoteRequest &{1 1 0 0}
+2022/07/31 23:21:32 start test
+2022/07/31 23:21:32 start election
+2022/07/31 23:21:32 {Node 2} starts election with RequestVoteRequest &{1 2 0 0}
+Test (2A): initial election ...
+2022/07/31 23:21:32 {Node 0}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 1 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:32 {Node 1} receives RequestVoteResponse &{1 false} from {Node 0} after sending RequestVoteRequest &{1 1 0 0} in term 1
+2022/07/31 23:21:32 {Node 2}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 1 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:32 {Node 1}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 2 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:32 {Node 1} receives RequestVoteResponse &{1 false} from {Node 2} after sending RequestVoteRequest &{1 1 0 0} in term 1
+2022/07/31 23:21:32 {Node 2} receives RequestVoteResponse &{1 false} from {Node 1} after sending RequestVoteRequest &{1 2 0 0} in term 1
+2022/07/31 23:21:32 {Node 0}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 2 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:32 {Node 2} receives RequestVoteResponse &{1 false} from {Node 0} after sending RequestVoteRequest &{1 2 0 0} in term 1
+--- FAIL: TestInitialElection2A (4.99s)
+    config.go:400: expected one leader, got none
+2022/07/31 23:21:37 start test
+2022/07/31 23:21:37 start election
+2022/07/31 23:21:37 {Node 0} starts election with RequestVoteRequest &{1 0 0 0}
+2022/07/31 23:21:37 start test
+2022/07/31 23:21:37 start election
+2022/07/31 23:21:37 {Node 1} starts election with RequestVoteRequest &{1 1 0 0}
+2022/07/31 23:21:37 start test
+2022/07/31 23:21:37 start election
+2022/07/31 23:21:37 {Node 2} starts election with RequestVoteRequest &{1 2 0 0}
+Test (2A): election after network failure ...
+2022/07/31 23:21:37 {Node 1}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 2 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:37 {Node 2} receives RequestVoteResponse &{1 false} from {Node 1} after sending RequestVoteRequest &{1 2 0 0} in term 1
+--- FAIL: TestReElection2A (5.08s)
+    config.go:400: expected one leader, got none
+2022/07/31 23:21:42 start test
+2022/07/31 23:21:42 start election
+2022/07/31 23:21:42 {Node 0} starts election with RequestVoteRequest &{1 0 0 0}
+2022/07/31 23:21:42 start test
+2022/07/31 23:21:42 start election
+2022/07/31 23:21:42 {Node 1} starts election with RequestVoteRequest &{1 1 0 0}
+2022/07/31 23:21:42 start test
+2022/07/31 23:21:42 start election
+2022/07/31 23:21:42 {Node 2} starts election with RequestVoteRequest &{1 2 0 0}
+2022/07/31 23:21:42 start test
+2022/07/31 23:21:42 start election
+2022/07/31 23:21:42 {Node 3} starts election with RequestVoteRequest &{1 3 0 0}
+2022/07/31 23:21:42 start test
+2022/07/31 23:21:42 start election
+2022/07/31 23:21:42 {Node 4} starts election with RequestVoteRequest &{1 4 0 0}
+2022/07/31 23:21:42 start test
+2022/07/31 23:21:42 start election
+2022/07/31 23:21:42 {Node 5} starts election with RequestVoteRequest &{1 5 0 0}
+2022/07/31 23:21:42 start test
+2022/07/31 23:21:42 start election
+2022/07/31 23:21:42 {Node 6} starts election with RequestVoteRequest &{1 6 0 0}
+Test (2A): multiple elections ...
+2022/07/31 23:21:42 {Node 1}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 0 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 0} receives RequestVoteResponse &{1 false} from {Node 1} after sending RequestVoteRequest &{1 0 0 0} in term 1
+2022/07/31 23:21:42 {Node 2}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 0 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 0} receives RequestVoteResponse &{1 false} from {Node 2} after sending RequestVoteRequest &{1 0 0 0} in term 1
+2022/07/31 23:21:42 {Node 3}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 0 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 0} receives RequestVoteResponse &{1 false} from {Node 3} after sending RequestVoteRequest &{1 0 0 0} in term 1
+2022/07/31 23:21:42 {Node 4}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 0 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 0} receives RequestVoteResponse &{1 false} from {Node 4} after sending RequestVoteRequest &{1 0 0 0} in term 1
+2022/07/31 23:21:42 {Node 5}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 0 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 0} receives RequestVoteResponse &{1 false} from {Node 5} after sending RequestVoteRequest &{1 0 0 0} in term 1
+2022/07/31 23:21:42 {Node 6}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 0 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 0} receives RequestVoteResponse &{1 false} from {Node 6} after sending RequestVoteRequest &{1 0 0 0} in term 1
+2022/07/31 23:21:42 {Node 0}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 1 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 1} receives RequestVoteResponse &{1 false} from {Node 0} after sending RequestVoteRequest &{1 1 0 0} in term 1
+2022/07/31 23:21:42 {Node 2}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 1 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 1} receives RequestVoteResponse &{1 false} from {Node 2} after sending RequestVoteRequest &{1 1 0 0} in term 1
+2022/07/31 23:21:42 {Node 3}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 1 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 1} receives RequestVoteResponse &{1 false} from {Node 3} after sending RequestVoteRequest &{1 1 0 0} in term 1
+2022/07/31 23:21:42 {Node 1}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 4 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 4}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 1 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 4} receives RequestVoteResponse &{1 false} from {Node 1} after sending RequestVoteRequest &{1 4 0 0} in term 1
+2022/07/31 23:21:42 {Node 1} receives RequestVoteResponse &{1 false} from {Node 4} after sending RequestVoteRequest &{1 1 0 0} in term 1
+2022/07/31 23:21:42 {Node 5}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 1 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 2}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 4 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 1} receives RequestVoteResponse &{1 false} from {Node 5} after sending RequestVoteRequest &{1 1 0 0} in term 1
+2022/07/31 23:21:42 {Node 4} receives RequestVoteResponse &{1 false} from {Node 2} after sending RequestVoteRequest &{1 4 0 0} in term 1
+2022/07/31 23:21:42 {Node 6}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 1 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 3}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 4 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 1} receives RequestVoteResponse &{1 false} from {Node 6} after sending RequestVoteRequest &{1 1 0 0} in term 1
+2022/07/31 23:21:42 {Node 4} receives RequestVoteResponse &{1 false} from {Node 3} after sending RequestVoteRequest &{1 4 0 0} in term 1
+2022/07/31 23:21:42 {Node 0}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 2 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 5}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 4 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 2} receives RequestVoteResponse &{1 false} from {Node 0} after sending RequestVoteRequest &{1 2 0 0} in term 1
+2022/07/31 23:21:42 {Node 4} receives RequestVoteResponse &{1 false} from {Node 5} after sending RequestVoteRequest &{1 4 0 0} in term 1
+2022/07/31 23:21:42 {Node 1}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 2 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 0}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 6 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 6} receives RequestVoteResponse &{1 false} from {Node 0} after sending RequestVoteRequest &{1 6 0 0} in term 1
+2022/07/31 23:21:42 {Node 3}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 2 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 1}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 6 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 2} receives RequestVoteResponse &{1 false} from {Node 3} after sending RequestVoteRequest &{1 2 0 0} in term 1
+2022/07/31 23:21:42 {Node 6} receives RequestVoteResponse &{1 false} from {Node 1} after sending RequestVoteRequest &{1 6 0 0} in term 1
+2022/07/31 23:21:42 {Node 4}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 2 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 2} receives RequestVoteResponse &{1 false} from {Node 4} after sending RequestVoteRequest &{1 2 0 0} in term 1
+2022/07/31 23:21:42 {Node 2}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 6 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 6} receives RequestVoteResponse &{1 false} from {Node 2} after sending RequestVoteRequest &{1 6 0 0} in term 1
+2022/07/31 23:21:42 {Node 3}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 6 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 5}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 2 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 2} receives RequestVoteResponse &{1 false} from {Node 5} after sending RequestVoteRequest &{1 2 0 0} in term 1
+2022/07/31 23:21:42 {Node 4}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 6 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 6} receives RequestVoteResponse &{1 false} from {Node 4} after sending RequestVoteRequest &{1 6 0 0} in term 1
+2022/07/31 23:21:42 {Node 6}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 2 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 2} receives RequestVoteResponse &{1 false} from {Node 6} after sending RequestVoteRequest &{1 2 0 0} in term 1
+2022/07/31 23:21:42 {Node 0}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 3 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 3} receives RequestVoteResponse &{1 false} from {Node 0} after sending RequestVoteRequest &{1 3 0 0} in term 1
+2022/07/31 23:21:42 {Node 1}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 5 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 1}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 3 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 3} receives RequestVoteResponse &{1 false} from {Node 1} after sending RequestVoteRequest &{1 3 0 0} in term 1
+2022/07/31 23:21:42 {Node 3}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 5 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 5} receives RequestVoteResponse &{1 false} from {Node 1} after sending RequestVoteRequest &{1 5 0 0} in term 1
+2022/07/31 23:21:42 {Node 5}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 6 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 6} receives RequestVoteResponse &{1 false} from {Node 3} after sending RequestVoteRequest &{1 6 0 0} in term 1
+2022/07/31 23:21:42 {Node 2} receives RequestVoteResponse &{1 false} from {Node 1} after sending RequestVoteRequest &{1 2 0 0} in term 1
+2022/07/31 23:21:42 {Node 6}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 5 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 0}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 5 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 2}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 3 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 3} receives RequestVoteResponse &{1 false} from {Node 2} after sending RequestVoteRequest &{1 3 0 0} in term 1
+2022/07/31 23:21:42 {Node 5} receives RequestVoteResponse &{1 false} from {Node 3} after sending RequestVoteRequest &{1 5 0 0} in term 1
+2022/07/31 23:21:42 {Node 5} receives RequestVoteResponse &{1 false} from {Node 6} after sending RequestVoteRequest &{1 5 0 0} in term 1
+2022/07/31 23:21:42 {Node 6} receives RequestVoteResponse &{1 false} from {Node 5} after sending RequestVoteRequest &{1 6 0 0} in term 1
+2022/07/31 23:21:42 {Node 2}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 5 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 5} receives RequestVoteResponse &{1 false} from {Node 0} after sending RequestVoteRequest &{1 5 0 0} in term 1
+2022/07/31 23:21:42 {Node 6}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 3 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 5} receives RequestVoteResponse &{1 false} from {Node 2} after sending RequestVoteRequest &{1 5 0 0} in term 1
+2022/07/31 23:21:42 {Node 4}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 3 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 3} receives RequestVoteResponse &{1 false} from {Node 6} after sending RequestVoteRequest &{1 3 0 0} in term 1
+2022/07/31 23:21:42 {Node 0}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 4 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 3} receives RequestVoteResponse &{1 false} from {Node 4} after sending RequestVoteRequest &{1 3 0 0} in term 1
+2022/07/31 23:21:42 {Node 4}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 5 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 4} receives RequestVoteResponse &{1 false} from {Node 0} after sending RequestVoteRequest &{1 4 0 0} in term 1
+2022/07/31 23:21:42 {Node 5} receives RequestVoteResponse &{1 false} from {Node 4} after sending RequestVoteRequest &{1 5 0 0} in term 1
+2022/07/31 23:21:42 {Node 6}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 4 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 4} receives RequestVoteResponse &{1 false} from {Node 6} after sending RequestVoteRequest &{1 4 0 0} in term 1
+2022/07/31 23:21:42 {Node 5}'s state is {state 2,term 1,currentTerm 0,} before processing requestVoteRequest &{1 3 0 0} and reply requestVoteResponse &{1 false}
+2022/07/31 23:21:42 {Node 3} receives RequestVoteResponse &{1 false} from {Node 5} after sending RequestVoteRequest &{1 3 0 0} in term 1
+--- FAIL: TestManyElections2A (5.14s)
+    config.go:400: expected one leader, got none
+FAIL
+exit status 1
+FAIL	6.824/raft	15.219s
